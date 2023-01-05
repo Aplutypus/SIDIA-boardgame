@@ -6,6 +6,7 @@ public class Tile : MonoBehaviour
 {
     public int column, row;
     public bool validTile = false;
+    public bool hasCharacter = false;
     private Color originalColor;
 
     public void SetOriginalColor()

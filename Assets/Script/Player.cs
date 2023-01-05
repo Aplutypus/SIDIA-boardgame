@@ -23,7 +23,21 @@ public class Player : MonoBehaviour
             Ray ray = UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if(Physics.Raycast(ray, out hit, 100))
-                print(hit.transform.name);
+            {
+                Tile tile = hit.transform.GetComponent<Tile>( );
+
+                if(tile != null && tile.validTile)
+                {
+                    ResetValidTiles( );
+                    gridManager.gridRef[column, row].hasCharacter = false;
+
+                    transform.position = new Vector3(tile.transform.position.x, 2, tile.transform.position.z);
+                    column = tile.column;
+                    row = tile.row;
+                    tile.hasCharacter = true;
+                    SetValidTiles( );
+                }
+            }
         }
     }
 
@@ -57,6 +71,4 @@ public class Player : MonoBehaviour
     {
         this.gridManager = gridManager;
     }
-
-
 }

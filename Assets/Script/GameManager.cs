@@ -46,10 +46,12 @@ public class GameManager : MonoBehaviour
         p1.SetPosition(p1Column, p1Row);
         p1.SetGridManager(gridManager);
         playerList.Add(p1);
+        gridManager.gridRef[p1Column, p1Row].hasCharacter = true;
         
         Player p2 = Instantiate(player, new Vector3(p2Column, 2, p2Row), Quaternion.identity);
         p2.SetPosition(p2Column, p2Row);
         p2.SetGridManager(gridManager);
         playerList.Add(p2);
+        gridManager.gridRef[p2Column, p2Row].hasCharacter = true;
     }
 }
