@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4338859787545815521}
   - component: {fileID: -1012412650884343958}
   m_Layer: 0
-  m_Name: Tile1
+  m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,4 +110,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   column: 0
   row: 0
-  validTile: 1
+  validTile: 0

@@ -1923,9 +1923,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   column: 16
   row: 16
-  tilePrefab1: {fileID: 7897192209138470936, guid: 84779f4d27f9f2f4eb4bae4f6df47615, type: 3}
-  tilePrefab2: {fileID: 8279575864631564179, guid: f15cbe3d88403324eb07d2a9bb46eadb, type: 3}
-  tileInvalid: {fileID: 8020450804521490785, guid: 119ec6304d618804e9f0e92fc73aceb8, type: 3}
+  tilePrefab: {fileID: 7897192209138470936, guid: 84779f4d27f9f2f4eb4bae4f6df47615, type: 3}
+  colourPattern1: {r: 0.03529412, g: 0.5471698, b: 0.14509805, a: 1}
+  colourPattern2: {r: 0.21176471, g: 0.7529412, b: 0.3254902, a: 1}
 --- !u!4 &1076041813
 Transform:
   m_ObjectHideFlags: 0
