@@ -17,6 +17,14 @@ public class Player : MonoBehaviour
     public void Update()
     {
         if(!myTurn) return;
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            Ray ray = UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if(Physics.Raycast(ray, out hit, 100))
+                print(hit.transform.name);
+        }
     }
 
     public void SetValidTiles() //trocar nome depois

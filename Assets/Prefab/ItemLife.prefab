@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 163257006103246011}
   - component: {fileID: 7325810662193236303}
   - component: {fileID: 6998971360029340333}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ExtraLife (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4598172112755006997}
   - component: {fileID: 2278640453901545494}
   - component: {fileID: 5315473050189847432}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ExtraLife (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6370757906716625388}
   - component: {fileID: -3371524070923019366}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ItemLife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 5940042132500545315}
   - component: {fileID: 4909860667760466979}
   - component: {fileID: 3343792595602742830}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ExtraLife (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 674603191378235583}
   - component: {fileID: 7399425806727828279}
   - component: {fileID: 5984857702809385641}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ExtraLife (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 4442128711609902774}
   - component: {fileID: 6611269365230054071}
   - component: {fileID: 4442055607273372894}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ExtraLife (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

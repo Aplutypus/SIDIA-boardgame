@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7509763179256760059
+--- !u!1 &2457010496528734439
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7509763179256760061}
-  - component: {fileID: 7509763179256760060}
+  - component: {fileID: 2457010496528734433}
+  - component: {fileID: 2457010496528734432}
   m_Layer: 0
-  m_Name: GridManager
+  m_Name: CollectableManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7509763179256760061
+--- !u!4 &2457010496528734433
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7509763179256760059}
+  m_GameObject: {fileID: 2457010496528734439}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,25 +31,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7509763179256760060
+--- !u!114 &2457010496528734432
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7509763179256760059}
+  m_GameObject: {fileID: 2457010496528734439}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2315629855e210c43a09c5d14c34d03a, type: 3}
+  m_Script: {fileID: 11500000, guid: 05d60a9d6cb17cd4ea07898408911a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xStart: 0
-  zStart: 0
-  column: 16
-  row: 16
-  xSize: 1
-  zSize: 1
-  tilePrefab1: {fileID: 7897192209138470936, guid: 84779f4d27f9f2f4eb4bae4f6df47615, type: 3}
-  tilePrefab2: {fileID: 8279575864631564179, guid: f15cbe3d88403324eb07d2a9bb46eadb, type: 3}
-  tileInvalid: {fileID: 8020450804521490785, guid: 119ec6304d618804e9f0e92fc73aceb8, type: 3}
-  gridParent: {fileID: 7509763179256760061}
+  Collectables:
+  - {fileID: 6065393094491374138, guid: 4dcd2fced0efd8e4a9ff4c445194840d, type: 3}
+  - {fileID: -3371524070923019366, guid: b1dfdcc7ddcbf4a44a4cbbed8c1c8a32, type: 3}
+  - {fileID: -1083668816525772946, guid: 14597e0af0a42164baab8b2e7e53bd6f, type: 3}
+  - {fileID: 4241802864019754849, guid: 28380af1394145a43a1bc4d718fec7a6, type: 3}
+  GridManager: {fileID: 1627548170844486911, guid: 304dadb634628194b805f1e782c77cfe, type: 3}

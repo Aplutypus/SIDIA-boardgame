@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3087725604403421288}
   - component: {fileID: 849265443016903493}
   - component: {fileID: 8534115288045227276}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,6 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9713e6c19008ef4faefd6bba87a8ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gridManager: {fileID: 0}
+  myTurn: 0
   life: 0
   attack: 0
   moves: 0
