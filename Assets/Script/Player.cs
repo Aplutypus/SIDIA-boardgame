@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
                     moves--;
                     tile.hasCharacter = true;
                     SetValidTiles( );
+                    SoundManager.instance.PlayMovementSound( );
                 }
                 else if(tile != null && tile.validBattle)
                 {

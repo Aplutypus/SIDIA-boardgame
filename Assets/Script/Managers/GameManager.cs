@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour
         StartGame();
     }
 
+    private void Start()
+    {
+        SoundManager.instance.PlayChangeTurnSound( );
+    }
+
     private void LateUpdate()
     {
         if(gameEnd) return;
@@ -26,12 +31,13 @@ public class GameManager : MonoBehaviour
             if(item.life <= 0)
             {
                 gameHUD.OpenEndGame( );
+                SoundManager.instance.PlayEndGameSound( );
                 gameEnd = true;
             }
         }
     }
 
-    public void SetTurn()
+    public void SetTurn(bool playAudio = true)
     {
         playerList[turn].myTurn = false;
         playerList[turn].ResetValidTiles( );
@@ -39,6 +45,7 @@ public class GameManager : MonoBehaviour
         if(turn >= playerList.Count) turn = 0;
         playerList[turn].myTurn = true;
         playerList[turn].SetValidTiles();
+        if (playAudio) SoundManager.instance.PlayChangeTurnSound( );
     }
 
     public void StartGame()
@@ -47,7 +54,7 @@ public class GameManager : MonoBehaviour
         SpawnPlayer( );
         collectableManager.SpawnCollectables(playerList[0], playerList[1]);
         turn = playerList.Count - 1;
-        SetTurn( );
+        SetTurn(false);
     }
 
     public void SpawnPlayer( )
@@ -90,6 +97,7 @@ public class GameManager : MonoBehaviour
         gameHUD.SetLeftDice(enemyDice);
         gameHUD.SetLeftHUDText(enemy.name);
         gameHUD.OpenBattleHUD( );
+        SoundManager.instance.PlayDiceSound( );
         int currentPlayerPoint = 0;
         int enemyPoint = 0;
 
