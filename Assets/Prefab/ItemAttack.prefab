@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a711e2ac1380d9246b24a32f8478db96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 3394994759555159482, guid: 9157cce8f54939b48873f4ef5dc04a7b, type: 3}
   quantity: 1
   mystery: 0
   attack: 1
@@ -227,8 +228,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 6.785414, z: 1}
+  m_Center: {x: 0, y: 0.08264466, z: 0}
 --- !u!1 &6598372225031439542
 GameObject:
   m_ObjectHideFlags: 0

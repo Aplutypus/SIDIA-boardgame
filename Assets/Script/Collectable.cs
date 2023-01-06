@@ -5,6 +5,7 @@ using UnityEngine;
 public class Collectable : MonoBehaviour
 {
     private int[] mysteryValue = new int[] { -1, 2 };
+    public GameObject particleEffect;
     public int quantity;
     public bool mystery;
 
@@ -21,6 +22,7 @@ public class Collectable : MonoBehaviour
     {
         SoundManager.instance.PlayCollectableSound( );
         Player player = other.GetComponent<Player>( );
+        Instantiate(particleEffect, transform.position, Quaternion.identity);
 
         if(attack) player.attack += quantity;
         else if(life) player.life += quantity;
