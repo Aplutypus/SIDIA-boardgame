@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   column: 16
   row: 16
+  boardSize: {fileID: 11400000, guid: 320665a2e16294d4281b564e1b0e0015, type: 2}
   tilePrefab: {fileID: 7897192209138470936, guid: 84779f4d27f9f2f4eb4bae4f6df47615, type: 3}
   colourPattern1: {r: 0.03529412, g: 0.5471698, b: 0.14509805, a: 1}
   colourPattern2: {r: 0.21176471, g: 0.7529412, b: 0.3254902, a: 1}

@@ -10,18 +10,9 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-    public void Settings( )
-    {
-        //música
-        //VFX
-        //Resolução da tela
-    }
 
     public void NewMatch( )
     {
-        //Resetar placar
-        //Resetar perfis
-        //desativar painel
         SceneManager.LoadScene(0);
     }
 

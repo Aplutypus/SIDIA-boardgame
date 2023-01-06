@@ -8,15 +8,17 @@ using UnityEngine;
 public class GridManager : MonoBehaviour
 {
     public int column = 16, row = 16;
+    public BoardSizeScriptable boardSize;
     public GameObject tilePrefab;
     public Color colourPattern1;
     public Color colourPattern2;
     public Tile[ , ] gridRef;
-    // == To Do ==
-    //Fator random para spawnar tiles invalidos (buracos)
 
     public void SpawnGrid()
     {
+        column = boardSize.column;
+        row = boardSize.row;
+
         gridRef = new Tile[column, row]; //spawna coletaveis
 
         for(int i = 0 ; i < column ; i++)
