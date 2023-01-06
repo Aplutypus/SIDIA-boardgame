@@ -68,20 +68,26 @@ public class GameManager : MonoBehaviour
         Player p1 = Instantiate(playerPrefab, new Vector3(p1Column, 2, p1Row), Quaternion.identity);
         p1.gameObject.name = "Player 1";
         gameHUD.SetPlayer1NameText(p1.gameObject.name);
+        p1.SetHUDTexts(gameHUD.p1Life, gameHUD.p1Moves, gameHUD.p1Attack);
         p1.SetPosition(p1Column, p1Row);
         p1.SetGameManager(this);
         p1.ResetMoves( );
         p1.life = 5;  // subject to change
+        p1.attack = 1;  // subject to change
+        p1.SetInitialTexts( );
         playerList.Add(p1);
         gridManager.gridRef[p1Column, p1Row].hasCharacter = true;
         
         Player p2 = Instantiate(playerPrefab, new Vector3(p2Column, 2, p2Row), Quaternion.identity);
         p2.gameObject.name = "Player 2";
         gameHUD.SetPlayer2NameText(p2.gameObject.name);
+        p2.SetHUDTexts(gameHUD.p2Life, gameHUD.p2Moves, gameHUD.p2Attack);
         p2.SetPosition(p2Column, p2Row);
         p2.SetGameManager(this);
         p2.ResetMoves( );
         p2.life = 5;  // subject to change
+        p2.attack = 1;  // subject to change
+        p2.SetInitialTexts( );
         playerList.Add(p2);
         gridManager.gridRef[p2Column, p2Row].hasCharacter = true;
     }
@@ -114,12 +120,14 @@ public class GameManager : MonoBehaviour
         if(currentPlayerPoint >= 2)
         {
             enemy.life -= currentPlayer.attack;
+            enemy.Text_Life.text = enemy.life.ToString( );
             gameHUD.SetTurnWinnerText(currentPlayer.name + " won the turn!");
         }
 
         if(enemyPoint >= 2)
         {
             currentPlayer.life -= enemy.attack;
+            currentPlayer.Text_Life.text = currentPlayer.life.ToString( );
             gameHUD.SetTurnWinnerText(enemy.name + " won the turn!");
         }
 

@@ -24,9 +24,21 @@ public class Collectable : MonoBehaviour
         Player player = other.GetComponent<Player>( );
         Instantiate(particleEffect, transform.position, Quaternion.identity);
 
-        if(attack) player.attack += quantity;
-        else if(life) player.life += quantity;
-        else if(moves) player.moves += quantity;
+        if(attack)
+        {
+            player.attack += quantity;
+            player.Text_Attack.text = player.attack.ToString( );
+        }
+        else if(life)
+        {
+            player.life += quantity;
+            player.Text_Life.text = player.life.ToString( );
+        }
+        else if(moves)
+        {
+            player.moves += quantity;
+            player.Text_Moves.text = player.moves.ToString( );
+        }
 
         Destroy(this.gameObject);
     }

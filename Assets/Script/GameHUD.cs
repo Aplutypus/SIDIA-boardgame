@@ -10,6 +10,12 @@ public class GameHUD : MonoBehaviour
     public GameObject panelEndGame;
     public TMP_Text endPanelWinnerText;
     public TMP_Text winnerText;
+    public TMP_Text p1Life;
+    public TMP_Text p1Moves;
+    public TMP_Text p1Attack;
+    public TMP_Text p2Life;
+    public TMP_Text p2Moves;
+    public TMP_Text p2Attack;
     public TMP_Text p1BattleName;
     public TMP_Text p2BattleName;
     public TMP_Text p1HUDName;

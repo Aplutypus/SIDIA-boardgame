@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -7,6 +8,9 @@ public class Player : MonoBehaviour
     private List<Tile> movementTiles = new List<Tile>( );
     private List<Tile> battleTiles = new List<Tile>( );
     public GameManager gameManager;
+    public TMP_Text Text_Life;
+    public TMP_Text Text_Moves;
+    public TMP_Text Text_Attack;
 
     public bool myTurn; //trocar nome depois
     public int life;
@@ -43,6 +47,7 @@ public class Player : MonoBehaviour
                     column = tile.column;
                     row = tile.row;
                     moves--;
+                    Text_Moves.text = moves.ToString( );
                     tile.hasCharacter = true;
                     SetValidTiles( );
                     SoundManager.instance.PlayMovementSound( );
@@ -53,6 +58,20 @@ public class Player : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void SetHUDTexts(TMP_Text life, TMP_Text move, TMP_Text attack)
+    {
+        Text_Attack = attack;
+        Text_Moves = move;
+        Text_Life = life;
+    }
+
+    public void SetInitialTexts()
+    {
+        Text_Attack.text = attack.ToString();
+        Text_Moves.text = moves.ToString( );
+        Text_Life.text = life.ToString( );
     }
 
     public void SetValidTiles( ) //trocar nome depois
@@ -94,6 +113,7 @@ public class Player : MonoBehaviour
     public void ResetMoves()
     {
         moves = 3;
+        Text_Moves.text = moves.ToString( );
     }
 
     public void SetPosition(int column, int row)
