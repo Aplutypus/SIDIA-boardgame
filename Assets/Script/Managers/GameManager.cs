@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public GridManager gridManager;
     public GameHUD gameHUD;
     public CollectableManager collectableManager;
+    public CharacterScriptable player1Scriptable;
+    public CharacterScriptable player2Scriptable;
     public Player playerPrefab;
     private List<Player> playerList = new List<Player>();
     private int turn;
@@ -66,27 +68,29 @@ public class GameManager : MonoBehaviour
         int p2Row = UnityEngine.Random.Range(0, gridManager.row);
         
         Player p1 = Instantiate(playerPrefab, new Vector3(p1Column, 2, p1Row), Quaternion.identity);
-        p1.gameObject.name = "Player 1";
+        p1.GetComponent<Renderer>( ).material.color = player1Scriptable.color;
+        p1.gameObject.name = player1Scriptable.characterName;
         gameHUD.SetPlayer1NameText(p1.gameObject.name);
         p1.SetHUDTexts(gameHUD.p1Life, gameHUD.p1Moves, gameHUD.p1Attack);
         p1.SetPosition(p1Column, p1Row);
         p1.SetGameManager(this);
         p1.ResetMoves( );
-        p1.life = 5;  // subject to change
-        p1.attack = 1;  // subject to change
+        p1.life = player1Scriptable.life;
+        p1.attack = player1Scriptable.attack;
         p1.SetInitialTexts( );
         playerList.Add(p1);
         gridManager.gridRef[p1Column, p1Row].hasCharacter = true;
         
         Player p2 = Instantiate(playerPrefab, new Vector3(p2Column, 2, p2Row), Quaternion.identity);
-        p2.gameObject.name = "Player 2";
+        p2.GetComponent<Renderer>( ).material.color = player2Scriptable.color;
+        p2.gameObject.name = player2Scriptable.characterName;
         gameHUD.SetPlayer2NameText(p2.gameObject.name);
         p2.SetHUDTexts(gameHUD.p2Life, gameHUD.p2Moves, gameHUD.p2Attack);
         p2.SetPosition(p2Column, p2Row);
         p2.SetGameManager(this);
         p2.ResetMoves( );
-        p2.life = 5;  // subject to change
-        p2.attack = 1;  // subject to change
+        p2.life = player2Scriptable.life;
+        p2.attack = player2Scriptable.attack;
         p2.SetInitialTexts( );
         playerList.Add(p2);
         gridManager.gridRef[p2Column, p2Row].hasCharacter = true;

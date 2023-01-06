@@ -44,5 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridManager: {fileID: 0}
+  gameHUD: {fileID: 0}
   collectableManager: {fileID: 0}
+  player1Scriptable: {fileID: 11400000, guid: 3cc01d822fd13a648aff2a4963d08477, type: 2}
+  player2Scriptable: {fileID: 11400000, guid: be113672c25ed2f4589a11d84b4d32e5, type: 2}
   playerPrefab: {fileID: 8534115288045227276, guid: e191c7fcaf0a94146a0e6e61a1431758, type: 3}
