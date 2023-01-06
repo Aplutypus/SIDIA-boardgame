@@ -6,32 +6,33 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    // == Menu Principal ==
-    public void StartGame() //PRONTO
+    public void StartGame( )
     {
         SceneManager.LoadScene(1);
     }
-    public void Settings() //nada por enquanto
+    public void Settings( )
     {
         //música
         //VFX
         //Resolução da tela
     }
-    public void NewMatch() //Por enquanto volta ao menu. Falta Placar, perfis e desativar paineis
+
+    public void NewMatch( )
     {
         //Resetar placar
         //Resetar perfis
         //desativar painel
         SceneManager.LoadScene(0);
     }
-    public void QuitGame() //PRONTO
+
+    public void QuitGame( ) //adicionar um quit para web, para fazer uma versão do itch.io
     {
         #if UNITY_STANDALONE
-            Application.Quit( ); //quit exe
+            Application.Quit( );
         #endif
 
         #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false; //quit unity editor
+            UnityEditor.EditorApplication.isPlaying = false;
         #endif
     }
 }

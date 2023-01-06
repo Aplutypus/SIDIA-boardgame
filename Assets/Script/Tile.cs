@@ -5,7 +5,8 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     public int column, row;
-    public bool validTile = false;
+    public bool validMovement = false;
+    public bool validBattle = false;
     public bool hasCharacter = false;
     private Color originalColor;
 

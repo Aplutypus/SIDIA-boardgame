@@ -172,9 +172,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1078839368908475863}
   - component: {fileID: 4241802864019754849}
+  - component: {fileID: 6226166497302485545}
   m_Layer: 2
   m_Name: ItemMystery
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -214,6 +215,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a711e2ac1380d9246b24a32f8478db96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quantity: 2
+  mystery: 1
+  attack: 0
+  life: 0
+  moves: 0
+--- !u!65 &6226166497302485545
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3197521480296019861}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5714313, y: 10.329092, z: 1}
+  m_Center: {x: 0.08928615, y: 4.664546, z: 0}
 --- !u!1 &4203586221499954404
 GameObject:
   m_ObjectHideFlags: 0

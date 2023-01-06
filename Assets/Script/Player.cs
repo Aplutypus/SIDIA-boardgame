@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private List<Tile> listTile = new List<Tile>();
-    public GridManager gridManager;
+    private List<Tile> movementTiles = new List<Tile>( );
+    private List<Tile> battleTiles = new List<Tile>( );
+    public GameManager gameManager;
 
     public bool myTurn; //trocar nome depois
     public int life;
@@ -14,51 +15,84 @@ public class Player : MonoBehaviour
     public int column;
     public int row;
 
-    public void Update()
+    public void LateUpdate( )
     {
         if(!myTurn) return;
+
+        if(moves <= 0)
+        {
+            gameManager.SetTurn( );
+            ResetMoves( );
+        }
 
         if(Input.GetMouseButtonDown(0))
         {
             Ray ray = UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
+
             if(Physics.Raycast(ray, out hit, 100))
             {
                 Tile tile = hit.transform.GetComponent<Tile>( );
 
-                if(tile != null && tile.validTile)
+                if(tile != null && tile.validMovement)
                 {
                     ResetValidTiles( );
-                    gridManager.gridRef[column, row].hasCharacter = false;
+                    gameManager.gridManager.gridRef[column, row].hasCharacter = false;
 
                     transform.position = new Vector3(tile.transform.position.x, 2, tile.transform.position.z);
                     column = tile.column;
                     row = tile.row;
+                    moves--;
                     tile.hasCharacter = true;
                     SetValidTiles( );
+                }
+                else if(tile != null && tile.validBattle)
+                {
+                    gameManager.DiceBattle(this);
                 }
             }
         }
     }
 
-    public void SetValidTiles() //trocar nome depois
+    public void SetValidTiles( ) //trocar nome depois
     {
-        listTile.Clear( );
-        listTile = gridManager.ValidMoviment(column, row);
-        foreach(var item in listTile)
+        movementTiles.Clear( );
+        movementTiles = gameManager.gridManager.GetValidMovement(column, row);
+
+        foreach(var item in movementTiles)
         {
-            item.validTile = true;
+            item.validMovement = true;
             item.SetColor(Color.yellow);
+        }
+
+        battleTiles.Clear( );
+        battleTiles = gameManager.gridManager.GetBattleTiles(column, row);
+
+        foreach(var item in battleTiles)
+        {
+            item.validBattle = true;
+            item.SetColor(Color.red);
         }
     }
 
-    public void ResetValidTiles() //trocar nome depois
+    public void ResetValidTiles( )
     {
-        foreach(var item in listTile)
+        foreach(var item in movementTiles)
         {
-            item.validTile = false;
+            item.validMovement = false;
             item.ResetColor();
         }
+
+        foreach(var item in battleTiles)
+        {
+            item.validBattle = false;
+            item.ResetColor( );
+        }
+    }
+
+    public void ResetMoves()
+    {
+        moves = 3;
     }
 
     public void SetPosition(int column, int row)
@@ -67,8 +101,8 @@ public class Player : MonoBehaviour
         this.row = row;
     }
 
-    public void SetGridManager(GridManager gridManager)
+    public void SetGameManager(GameManager gameManager)
     {
-        this.gridManager = gridManager;
+        this.gameManager = gameManager;
     }
 }

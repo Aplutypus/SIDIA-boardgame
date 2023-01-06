@@ -52,7 +52,7 @@ public class GridManager : MonoBehaviour
         tile.SetOriginalColor( );
     }
 
-    public List<Tile> ValidMoviment(int column, int row)
+    public List<Tile> GetValidMovement(int column, int row)
     {
         List<Tile> tile = new List<Tile>();
         
@@ -62,5 +62,21 @@ public class GridManager : MonoBehaviour
         if(row - 1 >= 0 && !gridRef[column, row - 1].hasCharacter) tile.Add(gridRef[column, row - 1]);
 
         return tile;
+    }
+
+    public List<Tile> GetBattleTiles(int column, int row)
+    {
+        List<Tile> tileBattle = new List<Tile>( );
+
+        if(column + 1 < this.column && gridRef[column + 1, row].hasCharacter)
+            tileBattle.Add(gridRef[column + 1, row]);
+        if(column - 1 >= 0 && gridRef[column - 1, row].hasCharacter)
+            tileBattle.Add(gridRef[column - 1, row]);
+        if(row + 1 < this.row && gridRef[column, row + 1].hasCharacter)
+            tileBattle.Add(gridRef[column, row + 1]);
+        if(row - 1 >= 0 && gridRef[column, row - 1].hasCharacter)
+            tileBattle.Add(gridRef[column, row - 1]);
+
+        return tileBattle;
     }
 }
